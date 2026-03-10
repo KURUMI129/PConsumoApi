@@ -9,13 +9,21 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let message of messages">
-      <th scope="row">{{ message.id }}</th>
-      <td>{{ message.NumControl }}</td>
-      <td>{{ message.name }}</td>
-      <td>{{ message.content }}</td>
-    </tr>
+    @for (message of messages; track message.id) {
+      <tr>
+        <th scope="row">{{ message.id }}</th>
+        <td>{{ message.NumControl }}</td>
+        <td>{{ message.name }}</td>
+        <td>{{ message.content }}</td>
+      </tr>
+    } @empty {
+      <tr>
+        <td colspan="4" class="text-center">No hay mensajes o están cargando...</td>
+      </tr>
+    }
   </tbody>
 </table>
 
-<p *ngIf="error">{{ error }}</p>
+@if (error) {
+  <p class="text-danger fw-bold">{{ error }}</p>
+}
