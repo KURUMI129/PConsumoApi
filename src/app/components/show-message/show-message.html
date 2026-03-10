@@ -1,0 +1,21 @@
+<p>show-message works!</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">NumControl</th>
+      <th scope="col">Name</th>
+      <th scope="col">Content</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let message of messages">
+      <th scope="row">{{ message.id }}</th>
+      <td>{{ message.NumControl }}</td>
+      <td>{{ message.name }}</td>
+      <td>{{ message.content }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p *ngIf="error">{{ error }}</p>
