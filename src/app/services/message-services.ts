@@ -12,4 +12,9 @@ export class MessageServices {
   listarMensajes() {
     return this.http.get<Message[]>(`${this.apiUrl}`);
   }
+
+  // Mandamos el objeto directo
+  crearMensaje(mensaje: any) {
+    return this.http.post<Message>(this.apiUrl, mensaje);
+  }
 }

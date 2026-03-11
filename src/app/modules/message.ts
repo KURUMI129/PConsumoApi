@@ -3,4 +3,5 @@ export interface Message {
     NumControl: string;
     name: string;
     content: string;
+    image: string;
 }
